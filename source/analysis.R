@@ -188,6 +188,37 @@ plot_jail_pop_by_race <- function() {
 # Your functions might go here ... <todo:  update comment>
 # See Canvas
 #----------------------------------------------------------------------------#
+library(maps)
+
+get_geographic_rates <- function() {
+  geo_max <- incarceration_data %>%
+    filter(year == 2018) %>%
+    group_by(state) %>%
+    summarise(total_w = sum(black_jail_pop_rate, na.rm = TRUE)) %>%
+    filter(total_w == max(total_w)) %>%
+    select(total_w, state)
+  
+  #State with highest rate of black jail population is TX
+  geo_pop <- incarceration_data %>%
+    filter(year == 2018, state == "TX") %>%
+    group_by(county_name) %>%
+    mutate(rate = sum(black_jail_pop_rate)) %>%
+    select(county_name, rate)
+  
+  return(geo_pop)
+}
+
+plot_geo_rate <- function() {
+  geo_pop <- get_geographic_rates()
+  
+  ggplot(geo_pop) +
+    geom_polygon( 
+      mapping = aes(x=long, y=lat, group=group, fill=rate),
+      color="black",
+       ) +
+    coord_map()
+  
+}
 
 ## Load data frame ---- 
 
