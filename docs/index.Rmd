@@ -1,45 +1,43 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
+title: "U.S Incarceration Systems Investigation"
+author: "Hiba Abbas"
 date: '2022-11-01'
 output: html_document
 ---
 
 ```{r echo=FALSE, eval=TRUE, message=FALSE}
-source("../source/a4-helpers.R")
-source("../source/analysis.R")
+source("~/Documents/info201/assignments/a4-HibbaAbas/source/a4-helpers.R")
+source("~/Documents/info201/assignments/a4-HibbaAbas/source/analysis.R")
+
 ```
 
 ## Abstract 
-[TODO: Include a short abstract (about 50 words)]
-
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
-
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
-```
+This report uses r and Ventura data to investigate the U.S jail systems.The Ventura data used has recorded data from 1970 to 2018. In this report the prisons' care for the well being of its inmates are examined through the recorded death counts of inmates, the racial disparities in the jail populations, and more are included.
 
 ## Introduction 
-[TODO]
+America has the highest jailing rate in the world. Yada Yada Yada
 
 ## Data Summary 
-[TODO]
+America's prison systems are not good, the health of the incarcerated is neglected. From 2000 to 2013 there were **`r total_jail_deaths_pretty`** deaths across all prisons in the nation. The amount of deaths would increase with each year, in 2000 there were approximatly **`r jail_deaths_2000_pretty`** and in 2013 there were **`r jail_deaths_2013_pretty`**, meaning there was an **`r prettyNum(jail_deaths_2013 - jail_deaths_2000, big.mark=",", scientific=FALSE)`** increase in deaths over thirteen years. 
 
-[TODO ... other sections ... See Canvas for details]
+
+## Section 3
+
+```{r echo=FALSE}
+plot_jail_pop_for_us()
+```
+
+## Section 4
+
+```{r echo=FALSE}
+states <- c("WA", "CA", "TX")
+plot_jail_pop_by_states(states)
+```
+
+## Section 5
+```{r echo=FALSE}
+plot_jail_pop_by_race()
+```
 
 _All the very best with your work!_
 
