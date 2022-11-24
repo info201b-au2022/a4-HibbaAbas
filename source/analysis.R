@@ -77,7 +77,7 @@ plot_jail_pop_for_us <- function()  {
   jail_pop_chart <- ggplot(dataframe, aes(y=total_jail_pop, x=year)) +
     geom_bar(stat = "identity") +
     scale_y_continuous(labels = scales::comma) +
-    labs(title = "Increase of jail population in U.S (1970 - 2018",
+    labs(title = "Increase of jail population in U.S (1970 - 2018)",
          caption = "This graph shows how the population across U.S jails has changed from 1970 to 2018")
   
   # print(jail_pop_chart)
@@ -114,7 +114,9 @@ plot_jail_pop_by_states <- function(states) {
   jail_pop_by_state_chart <- ggplot(jail_pop_by_state, aes(y=jail_pop, x=year, group=state, color=state)) +
     geom_line() +
     scale_y_continuous(labels = scales::comma) +
-    ggtitle("Jail population in U.S states from 1970 to 2018") +
+    labs(title = "Jail population in U.S states from 1970 to 2018",
+         caption = "A line graph showing the ail population in California, 
+         Texas, and Washington from 1970 to 2018") +
     scale_x_continuous(breaks=seq(1980, 2020, 10), limits = c(1970, 2020))
   
   return(jail_pop_by_state_chart)

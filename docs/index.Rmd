@@ -15,7 +15,8 @@ source("~/Documents/info201/assignments/a4-HibbaAbas/source/analysis.R")
 This report uses r and Ventura data to investigate the U.S jail systems.The Ventura data used has recorded data from 1970 to 2018. In this report the prisons' care for the well being of its inmates are examined through the recorded death counts of inmates, the racial disparities in the jail populations, and more are included.
 
 ## Introduction 
-America has the highest jailing rate in the world. Yada Yada Yada
+America established its prison systems in 1891, but it was in 1970 when it started to incarcerate mass amounts of people. In fact, America has the highest rate of incarceration of its citizen in the world! This is concerning considering that America enjoys political stability and does not have crime rates comparable to ones in other countries around the globe. A growing number of people in the U.S have pointed out the problems and biases with the U.S prison systems, and have pushed for more sustainable reform and alternative options to prison. 
+In this report the issues and biases of the U.S prison systems are explored and then visualized to provide a more lasting and clear impression for the general public. 
 
 ## Data Summary 
 America's prison systems are not good, the health of the incarcerated is neglected. From 2000 to 2013 there were **`r total_jail_deaths_pretty`** deaths across all prisons in the nation. The amount of deaths would increase with each year, in 2000 there were approximatly **`r jail_deaths_2000_pretty`** and in 2013 there were **`r jail_deaths_2013_pretty`**, meaning there was an **`r prettyNum(jail_deaths_2013 - jail_deaths_2000, big.mark=",", scientific=FALSE)`** increase in deaths over thirteen years. 
@@ -27,12 +28,16 @@ America's prison systems are not good, the health of the incarcerated is neglect
 plot_jail_pop_for_us()
 ```
 
+This graph shows how the population of U.S jails have changed from 1970 to 2018. From 1970 to 1980, the first ten years, the population remains somehwat stable at around 200,000 people. Then there is a steep increase from 1981 to 2008. During this time period there was an increase in each year. in 2008 the population reached almost 800,000 people. After the population becomes somewhat stable with slight decreases and increases until 2018, when the data set ends. This begs the question, why has the U.S jail population not had any steep declines? 
+
 ## Section 4
 
 ```{r echo=FALSE}
 states <- c("WA", "CA", "TX")
 plot_jail_pop_by_states(states)
 ```
+
+This line graph is more specific than the previous one. Instead of showing how jail populations have changed across the entire U.S, it focuses on how the population has changed in California, Texas, and Washington. For all graphs it can be seen how until 1980, the population remains at a pretty stagnant number, the same pattern found in the previous graph. Interestingly, both California and Texas seem to have an extreme spike in their populations from 1980 to 1995, while Washington seems to have grown at a much more stable and low rate. This made me curious as to why this spike in California and Texas occured. 
 
 ## Section 5
 ```{r echo=FALSE}
